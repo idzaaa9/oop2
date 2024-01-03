@@ -1,10 +1,15 @@
 #include "SudokuWriter.h"
 
 SudokuWriter::SudokuWriter(Sudoku9* refSudoku) : sudoku(refSudoku) {}
-
+/*
+	args: std::string filename - name of the file in which we save the sudoku
+	rtype: void
+	prints an error if file can't be opened
+*/
 void SudokuWriter::write(std::string filename)
 {
 	std::ofstream file(filename);
+	
 	// if we can not open the file properly, just return
 	if (!file.is_open()) {
 		std::cerr << "error while opening file " << filename << '\n';

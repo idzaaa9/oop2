@@ -10,9 +10,10 @@
 						 if data is not valid throws an error
 */
 
-#include "Sudoku9.h"
+#include <vector>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 class SudokuReader
 {
@@ -20,6 +21,6 @@ private:
 	std::string filename;
 public:
 	SudokuReader(std::string refFilename);
-	Sudoku9 read();
+	std::vector<std::vector<unsigned short int>> read();
 };
 
