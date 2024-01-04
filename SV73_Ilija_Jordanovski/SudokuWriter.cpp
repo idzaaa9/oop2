@@ -1,12 +1,12 @@
 #include "SudokuWriter.h"
 
-SudokuWriter::SudokuWriter(Sudoku9* refSudoku) : sudoku(refSudoku) {}
 /*
 	args: std::string filename - name of the file in which we save the sudoku
+		  Sudoku9& refSudoku - sudoku we are saving
 	rtype: void
 	prints an error if file can't be opened
 */
-void SudokuWriter::write(std::string filename)
+void SudokuWriter::write(Sudoku9& refSudoku, std::string filename)
 {
 	std::ofstream file(filename);
 	
@@ -15,7 +15,7 @@ void SudokuWriter::write(std::string filename)
 		std::cerr << "error while opening file " << filename << '\n';
 		return;
 	}
-	std::vector<std::vector<unsigned short int>> table = sudoku->getTable();
+	Utils::tableVector table = refSudoku.getTable();
 	// iterate through the table, write every int with a whitespace for easier reading later
 	for (const std::vector<unsigned short int> row : table) {
 		for (const unsigned short int i : row) {

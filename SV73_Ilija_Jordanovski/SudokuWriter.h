@@ -14,13 +14,11 @@
 #include "Sudoku9.h"
 #include <fstream>
 #include <iostream>
+#include "utils/Utils.hpp"
 
 class SudokuWriter
 {
-private:
-	Sudoku9* sudoku;
 public:
-	SudokuWriter(Sudoku9* refSudoku);
-	void write(std::string filename);
+	static void write(Sudoku9& refSudoku, std::string filename);
 };
 

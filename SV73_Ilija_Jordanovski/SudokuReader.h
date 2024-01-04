@@ -14,13 +14,11 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "utils/Utils.hpp"
 
 class SudokuReader
 {
-private:
-	std::string filename;
 public:
-	SudokuReader(std::string refFilename);
-	std::vector<std::vector<unsigned short int>> read();
+	static Utils::tableVector read(std::string filename);
 };
 
